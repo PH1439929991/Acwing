@@ -14,7 +14,7 @@ void DFS(int startx,int starty){
     if(startx == n-1&&starty == n-1){
         for(int i = 0 ; i < path.size() ;i++){
             cout << path[i];
-        }
+        }       
         return;
     }
     else{
