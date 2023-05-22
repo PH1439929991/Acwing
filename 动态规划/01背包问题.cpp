@@ -12,6 +12,7 @@
 using namespace std;
 const int N = 100;
 int dp[N][N] = {0};
+
 int n,m;
 int v[N],W[N];
 
