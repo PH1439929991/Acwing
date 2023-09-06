@@ -19,7 +19,6 @@ void mergearray(int a[],int first,int mid,int last,int temp[]){
     while(j<=k2){
         temp[k++] = a[j++];
     }
-
     for(int i = 0 ; i < k;i++){
         a[first+i] = temp[i];
     }
