@@ -14,7 +14,6 @@ void down(int v){
         down(t);
     } 
 }//向下调整
-
 void up(int v){
     //向上调整
     while( v / 2 && h[v/2]>h[v]){
@@ -22,8 +21,6 @@ void up(int v){
         v = v/2;
     }
 }
-
-
 int main(){
     scanf("%d %d",&n,&m);
     //从1开始

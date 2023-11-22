@@ -7,7 +7,7 @@ bool isvalid(const string& s,int start,int end){
     if(start > end){
         return false;
     }
-    if(s[start] == '0' && start!=end){
+    if(s[start]=='0' && start!=end){
         return false;
     }
     int num = 0;
@@ -15,10 +15,25 @@ bool isvalid(const string& s,int start,int end){
         if(s[i] > '9' || s[i] < '0'){
             return false;
         }
-        num = num * 10 + (s[i] - '0');
-        if(num>255) return false;
+        num += num * 10 + (s[i] - '0');
+        if(num > 255) return false;
     }
     return true;
+    // if(start > end){
+    //     return false;
+    // }
+    // if(s[start] == '0' && start!=end){
+    //     return false;
+    // }
+    // int num = 0;
+    // for(int i = start ; i <= end ; i++){
+    //     if(s[i] > '9' || s[i] < '0'){
+    //         return false;
+    //     }
+    //     num = num * 10 + (s[i] - '0');
+    //     if(num>255) return false;
+    // }
+    // return true;
 }
 
 void backtrace(string &s,int start,int pos){
@@ -30,12 +45,19 @@ void backtrace(string &s,int start,int pos){
     }
     for(int i = start ; i < s.size() ; i++){
         if(isvalid(s,start,i)){
-            s.insert(s.begin() + i + 1,'.');
+            s.insert(s.begin()+i+1,'.');
             pos++;
             backtrace(s,i+2,pos);
             pos--;
             s.erase(s.begin()+i+1);
-        }else break;
+        }
+        // if(isvalid(s,start,i)){
+        //     s.insert(s.begin() + i + 1,'.');
+        //     pos++;
+        //     backtrace(s,i+2,pos);
+        //     pos--;
+        //     s.erase(s.begin()+i+1);
+        // }else break;
     }
 }
 

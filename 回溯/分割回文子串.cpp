@@ -13,7 +13,7 @@ bool isPalindrome(string s,int startindex,int end){//判断是否为回文子串
 void backtrace(string &s,int start){
     if(start>=s.size()){
         res.push_back(path);
-        return ;
+        return;
     }
     for(int i = start ; i < s.size() ; i++){
         //substr(start,num) 从start下标开始  剪切从start后num个
